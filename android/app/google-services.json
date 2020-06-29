@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "24857565331",
+    "firebase_url": "https://docsapp-7ad94.firebaseio.com",
+    "project_id": "docsapp-7ad94",
+    "storage_bucket": "docsapp-7ad94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24857565331:android:619f41471eec45dfa89566",
+        "android_client_info": {
+          "package_name": "com.example.login_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24857565331-bhiavd22vdqoe546jcjihfvq7q1o1egh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlXEKvw2kTPyi0FdwnYa8ygv4RvGqCHKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24857565331-bhiavd22vdqoe546jcjihfvq7q1o1egh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
