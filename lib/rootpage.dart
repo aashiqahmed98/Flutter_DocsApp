@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:login_demo/login_signup_page.dart';
 import 'package:login_demo/authentication.dart';
 import 'package:login_demo/homepage.dart';
@@ -82,9 +83,6 @@ class _RootpageState extends State<Rootpage> {
           );
         }
         break;
-
-      default:
-      // return buildWaitingScreen();
     }
   }
 }

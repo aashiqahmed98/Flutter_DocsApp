@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_demo/authentication.dart';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 class LoginSignupPage extends StatefulWidget {
   LoginSignupPage({this.auth, this.loginCallback});
 
@@ -88,7 +90,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
       child: Padding(
         padding: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
         child: CircleAvatar(
-          // backgroundColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
           radius: 48.0,
           child: Image.asset('assets/cross.png'),
         ),
@@ -98,7 +100,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
   Widget showEmailInput() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0.0, 80.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
@@ -117,7 +119,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
   Widget showPasswordInput() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
         obscureText: true,
@@ -210,13 +212,39 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         if (_isLoginForm) {
           userId = await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
+
+          Fluttertoast.showToast(
+            msg: "LOGIN Success",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            fontSize: 16.0,
+          );
         }
         // SignupForm
         else {
-          userId = await widget.auth.signUp(_email, _password);
+          try {
+            userId = await widget.auth.signUp(_email, _password);
+            // Toast.show("Signup Success", context,
+            //     duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
+
+            Fluttertoast.showToast(
+                msg: "SIGNUP Success",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.grey,
+                textColor: Colors.black,
+                fontSize: 16.0);
+
+            print('Signed up user: $userId');
+          } catch (e) {
+            print(e);
+          }
           //widget.auth.sendEmailVerification();
           //_showVerifyEmailSentDialog();
-          print('Signed up user: $userId');
         }
         setState(() {
           _isLoading = false;
