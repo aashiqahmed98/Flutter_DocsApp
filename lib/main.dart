@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'DOCS APP',
         theme: new ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
           primarySwatch: Colors.blue,
         ),
-
         // Passing the Firebase Auth
         home: new Rootpage(auth: new Auth()));
+
   }
 }

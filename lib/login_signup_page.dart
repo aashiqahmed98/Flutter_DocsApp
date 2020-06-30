@@ -66,7 +66,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           fit: StackFit.expand,
           children: <Widget>[
             Image.asset(
-              "assets/bg.jpg",
+              "assets/bg1.jpeg",
               fit: BoxFit.cover,
             ),
             _showForm(),
@@ -90,14 +90,17 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   }
 
   Widget showLogo() {
-    return new Hero(
-      tag: 'hero',
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
-        child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: 48.0,
-          child: Image.asset('assets/cross.png'),
+    return Opacity(
+      opacity: 0.5,
+      child: new Hero(
+        tag: 'hero',
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            radius: 48.0,
+            child: Image.asset('assets/cross.png'),
+          ),
         ),
       ),
     );
@@ -112,13 +115,13 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         keyboardType: TextInputType.emailAddress,
         autofocus: false,
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
         ),
         decoration: new InputDecoration(
             hintText: 'Enter Email',
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: Colors.grey[600]),
             labelText: "Email",
-            labelStyle: TextStyle(color: Colors.white),
+            labelStyle: TextStyle(color: Colors.black),
             icon: new Icon(
               Icons.mail,
               color: Colors.grey,
@@ -137,12 +140,12 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         cursorColor: Colors.orange,
         obscureText: true,
         autofocus: false,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
         decoration: new InputDecoration(
             hintText: 'Enter password',
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: Colors.grey[600]),
             labelText: "Password",
-            labelStyle: TextStyle(color: Colors.white),
+            labelStyle: TextStyle(color: Colors.black),
             icon: new Icon(
               Icons.lock,
               color: Colors.grey,
@@ -179,8 +182,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
             _isLoginForm ? 'Create an account' : 'Have an account? Sign in',
             style: new TextStyle(
                 fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white)),
+                fontWeight: FontWeight.w700,
+                color: Colors.grey[600])),
         onPressed: toggleFormMode);
   }
 
@@ -209,7 +212,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
       return new Text(
         _errorMessage,
         style: TextStyle(
-            fontSize: 13.0,
+            fontSize: 23.0,
             color: Colors.red,
             height: 1.0,
             fontWeight: FontWeight.w300),
@@ -217,6 +220,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     } else {
       return new Container(
         height: 0.0,
+        width: 0.0,
       );
     }
   }
