@@ -16,15 +16,13 @@ class HomePage extends StatelessWidget {
       onSignedOut();
 
       Fluttertoast.showToast(
-        
           msg: "Logout Success",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
-          backgroundColor: Colors.grey,
+          // backgroundColor: Colors.grey,
           textColor: Colors.black,
-          fontSize: 16.0
-          );
+          fontSize: 16.0);
     } catch (e) {
       print(e);
     }

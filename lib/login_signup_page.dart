@@ -63,7 +63,12 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
         // We are using stack as two components used one upon another
         body: Stack(
+          fit: StackFit.expand,
           children: <Widget>[
+            Image.asset(
+              "assets/bg.jpg",
+              fit: BoxFit.cover,
+            ),
             _showForm(),
             _showCircularProgress(),
           ],
@@ -102,11 +107,18 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
       child: new TextFormField(
+        cursorColor: Colors.orange,
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
         autofocus: false,
+        style: TextStyle(
+          color: Colors.white,
+        ),
         decoration: new InputDecoration(
-            hintText: 'Email',
+            hintText: 'Enter Email',
+            hintStyle: TextStyle(color: Colors.grey),
+            labelText: "Email",
+            labelStyle: TextStyle(color: Colors.white),
             icon: new Icon(
               Icons.mail,
               color: Colors.grey,
@@ -122,10 +134,15 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
       padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
+        cursorColor: Colors.orange,
         obscureText: true,
         autofocus: false,
+        style: TextStyle(color: Colors.white),
         decoration: new InputDecoration(
-            hintText: 'Password',
+            hintText: 'Enter password',
+            hintStyle: TextStyle(color: Colors.grey),
+            labelText: "Password",
+            labelStyle: TextStyle(color: Colors.white),
             icon: new Icon(
               Icons.lock,
               color: Colors.grey,
@@ -160,7 +177,10 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     return new FlatButton(
         child: new Text(
             _isLoginForm ? 'Create an account' : 'Have an account? Sign in',
-            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+            style: new TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
         onPressed: toggleFormMode);
   }
 
@@ -218,7 +238,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.CENTER,
             timeInSecForIosWeb: 1,
-            backgroundColor: Colors.grey,
+            // backgroundColor: Colors.grey,
             textColor: Colors.black,
             fontSize: 16.0,
           );
@@ -235,7 +255,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.CENTER,
                 timeInSecForIosWeb: 1,
-                backgroundColor: Colors.grey,
+                // backgroundColor: Colors.grey,
                 textColor: Colors.black,
                 fontSize: 16.0);
 
